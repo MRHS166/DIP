@@ -1,78 +1,95 @@
-#ImageProcessor
+# ImageProcessor
+
 A modular Python script for performing common image processing tasks using OpenCV, including loading images, adjusting brightness and contrast, blurring, denoising, edge detection, and feature extraction using SIFT.
 
-#📦 Features
--✅ Load images with format validation
+---
 
--✅ Adjust brightness and contrast
+## 📦 Features
 
--✅ Apply Gaussian blur
+- ✅ Load images with format validation  
+- ✅ Adjust brightness and contrast  
+- ✅ Apply Gaussian blur  
+- ✅ Apply Non-local Means Denoising  
+- ✅ Perform Canny edge detection  
+- ✅ Extract features using SIFT descriptors  
+- ✅ Save processed images to disk  
 
--✅ Apply Non-local Means Denoising
+---
 
--✅ Perform Canny edge detection
+## 🛠 Requirements
 
--✅ Extract features using SIFT descriptors
-
--✅ Save processed images to disk
-
-#🛠 Requirements
-Python 3.6+
-
-OpenCV (cv2)
-
-NumPy
+- Python 3.6+
+- OpenCV (`cv2`)
+- NumPy
 
 Install the required packages using:
 
-
+```bash
 pip install opencv-python numpy
-For SIFT to work, you may need the opencv-contrib-python package:
+```
 
+For SIFT to work, you may need the *opencv-contrib-python* package:
 
+```bash
 pip install opencv-contrib-python
-#🚀 Usage
-Run the Script
-Place your image in a known directory and edit the path in the main() function:
+```
 
+---
 
+## 🚀 Usage
+
+### Run the Script
+
+Place your image in a known directory and edit the path in the `main()` function:
+
+```python
 input_path = "/content/images (1).jpeg"
+```
+
 Then run the script:
 
-
+```bash
 python image_processor.py
-Output
+```
+
+### Output
+
 The script processes the image and saves:
 
-Brightness/contrast adjusted image
+- Brightness/contrast adjusted image
+- Gaussian blurred image
+- Denoised image
+- Canny edge map
 
-Gaussian blurred image
+Each image is saved using the original filename with a suffix (e.g., `image_adjusted.jpg`).
 
-Denoised image
+---
 
-Canny edge map
+## 🧩 Class Overview
 
-Each image is saved using the original filename with a suffix (e.g., image_adjusted.jpg).
+### `ImageProcessor`
 
-#🧩 Class Overview
-ImageProcessor
-Method	Description
-load_image(path)	Loads and validates an image
-adjust_brightness_contrast	Modifies brightness and contrast of the image
-apply_gaussian_blur	Applies Gaussian blur
-apply_denoising	Removes noise using Non-local Means Denoising
-apply_canny_edge	Detects edges using Canny method
-extract_features	Extracts SIFT features from the image
-save_image	Saves the image to a specified path
+| Method                         | Description                                       |
+|-------------------------------|---------------------------------------------------|
+| `load_image(path)`            | Loads and validates an image                     |
+| `adjust_brightness_contrast` | Modifies brightness and contrast of the image    |
+| `apply_gaussian_blur`        | Applies Gaussian blur                            |
+| `apply_denoising`            | Removes noise using Non-local Means Denoising    |
+| `apply_canny_edge`           | Detects edges using Canny method                 |
+| `extract_features`           | Extracts SIFT features from the image            |
+| `save_image`                 | Saves the image to a specified path              |
 
-#📂 Example Output Files
--images (1)_adjusted.jpg
+---
 
--images (1)_blurred.jpg
+## 📂 Example Output Files
 
--images (1)_denoised.jpg
+- `images (1)_adjusted.jpg`
+- `images (1)_blurred.jpg`
+- `images (1)_denoised.jpg`
+- `images (1)_edges.jpg`
 
--images (1)_edges.jpg
+---
 
-#📃 License
+## 📃 License
+
 This project is open source and free to use for educational and personal projects.
